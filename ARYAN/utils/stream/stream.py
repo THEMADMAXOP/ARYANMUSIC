@@ -11,7 +11,7 @@ from ARYAN.misc import db
 from ARYAN.utils.database import add_active_video_chat, is_active_chat
 from ARYAN.utils.exceptions import AssistantErr
 from ARYAN.utils.inline import aq_markup, close_markup, stream_markup
-from ARYAN.utils.pastebin import AnonyBin
+from ARYAN.utils.pastebin import ARYANBin
 from ARYAN.utils.stream.queue import put_queue, put_queue_index
 from ARYAN.utils.thumbnails import get_thumb
 
