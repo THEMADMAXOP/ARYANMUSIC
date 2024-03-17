@@ -79,6 +79,6 @@ Press `Ctrl+C` when you're done with editing env and `:wq` to save the env<br>
 <a href="https://github.com/THEMADMAXPRO"> <img src="https://img.shields.io/badge/⏤͟͟͞𝐀 𝐑 𝐘 𝐀 𝐍 [•ᴧғᴋ•]™ [🇮🇳]-black?style=for-the-badge&logo=github" alt="⏤͟͟͞𝐀 𝐑 𝐘 𝐀 𝐍 [•ᴧғᴋ•]™ [🇮🇳]" /> </a>
 </p>
 
-- <b> _sᴩᴇᴄɪᴀʟ ᴛʜᴀɴᴋs ᴛᴏ [𝐀𝐑𝐘𝐀𝐍](https://github.com/ABOUT_ARYAN13) </b>
+- <b> _sᴩᴇᴄɪᴀʟ ᴛʜᴀɴᴋs ᴛᴏ [𝐀𝐑𝐘𝐀𝐍](https://t.me/ABOUT_ARYAN13) </b>
 
 
