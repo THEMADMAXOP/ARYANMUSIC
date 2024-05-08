@@ -24,7 +24,7 @@ DURATION_LIMIT_MIN = int(getenv("DURATION_LIMIT", 9999999999))
 LOGGER_ID = int(getenv("LOGGER_ID", None))
 
 # Get this value from @EMMA_X_ROBOT on Telegram by /id
-OWNER_ID = int(getenv("OWNER_ID", 6627636245))
+OWNER_ID = int(getenv("OWNER_ID", 5692779292))
 
 ## Fill these variables if you're deploying on heroku.
 # Your heroku app name
@@ -34,7 +34,7 @@ HEROKU_API_KEY = getenv("HEROKU_API_KEY")
 
 UPSTREAM_REPO = getenv(
     "UPSTREAM_REPO",
-    "https://github.com/THEMADMAXPRO/ARYANMUSIC",
+    "https://github.com/THEMADMAXOP/ARYANMUSIC",
 )
 UPSTREAM_BRANCH = getenv("UPSTREAM_BRANCH", "master")
 GIT_TOKEN = getenv(
@@ -80,7 +80,7 @@ confirmer = {}
 
 
 START_IMG_URL = getenv(
-    "START_IMG_URL", "https://telegra.ph/file/46e0b8869414002028f2e.jpg"
+    "START_IMG_URL", "https://te.legra.ph/file/2b44030c9b644e20bcec2.jpg"
 )
 LOOD_IMG_URL = getenv(
     "LOOD_IMG_URL", "https://graph.org/file/9135b09c67c22c9599ab4.jpg"
