@@ -6,7 +6,6 @@ import re
 import asyncio
 import time
 from ARYAN import app
-from ARYAN.utils.database import add_served_chat_clone, delete_served_chat_clone
 from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 from ARYAN.utils.database import get_assistant
 import asyncio
