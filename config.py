@@ -15,13 +15,15 @@ BOT_TOKEN = getenv("BOT_TOKEN")
 
 # Get your mongo url from cloud.mongodb.com
 MONGO_DB_URI = getenv("MONGO_DB_URI", None)
+MUSIC_BOT_NAME = getenv("MUSIC_BOT_NAME", None)
+PRIVATE_BOT_MODE = getenv("PRIVATE_BOT_MODE", None)
 
 DURATION_LIMIT_MIN = int(getenv("DURATION_LIMIT", 9999999999))
 
 # Chat id of a group for logging bot's activities
 LOGGER_ID = int(getenv("LOGGER_ID", None))
 
-# Get this value from @FallenxBot on Telegram by /id
+# Get this value from @EMMA_X_ROBOT on Telegram by /id
 OWNER_ID = int(getenv("OWNER_ID", 6627636245))
 
 ## Fill these variables if you're deploying on heroku.
@@ -32,7 +34,7 @@ HEROKU_API_KEY = getenv("HEROKU_API_KEY")
 
 UPSTREAM_REPO = getenv(
     "UPSTREAM_REPO",
-    "https://github.com/THEMADMAXPRO/ARYANMUSIC",
+    "https://github.com/THEMADMAXOP/PRIVATE",
 )
 UPSTREAM_BRANCH = getenv("UPSTREAM_BRANCH", "master")
 GIT_TOKEN = getenv(
@@ -80,8 +82,11 @@ confirmer = {}
 START_IMG_URL = getenv(
     "START_IMG_URL", "https://telegra.ph/file/46e0b8869414002028f2e.jpg"
 )
+LOOD_IMG_URL = getenv(
+    "LOOD_IMG_URL", "https://graph.org/file/9135b09c67c22c9599ab4.jpg"
+)
 PING_IMG_URL = getenv(
-    "PING_IMG_URL", "https://telegra.ph/file/119a308c5dd73dc74fccd.jpg"
+    "PING_IMG_URL", "https://telegra.ph/file/8a0508262e794c96a3e48.jpg"
 )
 PLAYLIST_IMG_URL = "https://te.legra.ph/file/4ec5ae4381dffb039b4ef.jpg"
 STATS_IMG_URL = "https://telegra.ph/file/119a308c5dd73dc74fccd.jpg"
