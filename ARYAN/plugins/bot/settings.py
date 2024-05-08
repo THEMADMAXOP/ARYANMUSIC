@@ -6,6 +6,8 @@ from pyrogram.types import (
     InlineKeyboardButton,
     InlineKeyboardMarkup,
     Message,
+    InputMediaPhoto,
+    InputMediaVideo,
 )
 
 from ARYAN import app
@@ -33,8 +35,9 @@ from ARYAN.utils.inline.settings import (
     setting_markup,
     vote_mode_markup,
 )
+from ARYAN.utils.inline import source_markup, lood_markup
 from ARYAN.utils.inline.start import private_panel
-from config import BANNED_USERS, OWNER_ID
+from config import BANNED_USERS, OWNER_ID, MUSIC_BOT_NAME, START_IMG_URL
 
 
 @app.on_message(
@@ -48,8 +51,24 @@ async def settings_mar(client, message: Message, _):
         reply_markup=InlineKeyboardMarkup(buttons),
     )
 
+@app.on_callback_query(filters.regex("gib_source") & ~BANNED_USERS)
+@languageCB
+async def gib_repo(client, CallbackQuery, _):
+    await CallbackQuery.edit_message_media(
+     InputMediaVideo("https://te.legra.ph/file/6621477cab27a27116d4a.mp4", has_spoiler=True),
+        reply_markup=source_markup(_))
 
-@app.on_callback_query(filters.regex("settings_helper") & ~BANNED_USERS)
+@app.on_callback_query(filters.regex("lood") & ~BANNED_USERS)
+@languageCB
+async def support(client, CallbackQuery, _):
+    await CallbackQuery.edit_message_text(
+        text="๏ ᴄʟɪᴄᴋ ᴏɴ ᴛʜᴇ ʙᴜᴛᴛᴏɴs ɢɪᴠᴇɴ ʙᴇʟᴏᴡ ᴛᴏ ɢᴇᴛ ʜᴇʟᴩ ᴀɴᴅ ᴍᴏʀᴇ ɪɴғᴏʀᴍᴀᴛɪᴏɴ.\n\n\nɪғ ʏᴏᴜ ғᴏᴜɴᴅ ᴀɴʏ ʙᴜɢ ɪɴ ˹ᴇᴍᴍᴀ ✘ ᴍᴜsɪᴄ˼ ♪ ᴏʀ ɪғ ʏᴏᴜ ᴡᴀɴɴᴀ ɢɪᴠᴇ ғᴇᴇᴅʙᴀᴄᴋ ᴀʙᴏᴜᴛ ᴛʜᴇ ˹ᴇᴍᴍᴀ ✘ ᴍᴜsɪᴄ˼ ♪, ᴩʟᴇᴀsᴇ ʀᴇᴩᴏʀᴛ ɪᴛ ᴀᴛ sᴜᴩᴩᴏʀᴛ ᴄʜᴀᴛ.",
+        reply_markup=lood_markup(_))
+    
+
+@app.on_callback_query(
+    filters.regex("settings_helper") & ~BANNED_USERS
+)
 @languageCB
 async def settings_cb(client, CallbackQuery, _):
     try:
@@ -59,9 +78,8 @@ async def settings_cb(client, CallbackQuery, _):
     buttons = setting_markup(_)
     return await CallbackQuery.edit_message_text(
         _["setting_1"].format(
-            app.mention,
-            CallbackQuery.message.chat.id,
             CallbackQuery.message.chat.title,
+            CallbackQuery.message.chat.id,
         ),
         reply_markup=InlineKeyboardMarkup(buttons),
     )
@@ -78,8 +96,12 @@ async def settings_back_markup(client, CallbackQuery: CallbackQuery, _):
         await app.resolve_peer(OWNER_ID)
         OWNER = OWNER_ID
         buttons = private_panel(_)
-        return await CallbackQuery.edit_message_text(
-            _["start_2"].format(CallbackQuery.from_user.mention, app.mention),
+        return await CallbackQuery.edit_message_media(
+            InputMediaPhoto(
+                media=START_IMG_URL,
+                caption=_["start_2"].format(
+                    CallbackQuery.from_user.mention, app.mention),
+            ),
             reply_markup=InlineKeyboardMarkup(buttons),
         )
     else:
@@ -389,3 +411,5 @@ async def vote_change(client, CallbackQuery, _):
         )
     except MessageNotModified:
         return
+
+    
