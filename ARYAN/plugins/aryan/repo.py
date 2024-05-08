@@ -5,9 +5,9 @@ from ARYAN.utils.errors import capture_err
 import httpx 
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
-start_txt = """**
+start_txt = """
 ᴄʟɪᴄᴋ ʙᴇʟᴏᴡ ʙᴜᴛᴛᴏɴ ᴛᴏ ɢᴇᴛ ʀᴇᴘᴏ
-**"""
+"""
 
 
 
@@ -23,7 +23,7 @@ async def start(_, msg):
     reply_markup = InlineKeyboardMarkup(buttons)
     
     await msg.reply_photo(
-        photo="https://telegra.ph/file/faa1f3ad7116e33d9f402.jpg",
+        photo="https://te.legra.ph/file/7ec3b010624cc49644454.jpg",
         caption=start_txt,
         reply_markup=reply_markup
     )
