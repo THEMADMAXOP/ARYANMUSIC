@@ -7,7 +7,7 @@ from ARYAN import app
 from ARYAN.core.call import ARYAN
 from ARYAN.utils import bot_sys_stats
 from ARYAN.utils.decorators.language import language
-from ARYAN.utils.inline import supp_markup
+from ARYAN.utils.inline import add_markup
 from config import BANNED_USERS, PING_IMG_URL
 
 
