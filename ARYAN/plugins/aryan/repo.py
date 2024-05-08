@@ -1,71 +1,30 @@
-from pyrogram import Client, filters
-import requests
-import random
-import os
-import re
-import asyncio
-import time
+from pyrogram import filters
+from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from ARYAN import app
-from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
-import asyncio
-from ARYAN.core.userbot import Userbot
-from pyrogram import Client, filters
-from ARYAN import app
-import asyncio
-import random
-from pyrogram import Client, filters
+from ARYAN.utils.errors import capture_err
+import httpx 
+from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
+
+start_txt = """**
+ᴄʟɪᴄᴋ ʙᴇʟᴏᴡ ʙᴜᴛᴛᴏɴ ᴛᴏ ɢᴇᴛ ʀᴇᴘᴏ
+**"""
 
 
 
-@Client.on_message(filters.command("repo") & filters.group)
-async def repo(client: Client, message: Message):
-    await message.reply_photo(
-        photo=f"https://te.legra.ph/file/7ec3b010624cc49644454.jpg",
-        caption=f"""ᴄʟɪᴄᴋ ʙᴇʟᴏᴡ ʙᴜᴛᴛᴏɴ ᴛᴏ ɢᴇᴛ ʀᴇᴘᴏ""",
-        reply_markup=InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton(
-                        "sᴏᴜʀᴄᴇ ᴄᴏᴅᴇ", url=f"https://github.com/THEMADMAXPRO/ARYANMUSIC"
-                    )
-                ]
-            ]
-        ),
+
+@app.on_message(filters.command("repo"))
+async def start(_, msg):
+    buttons = [
+        [ 
+          InlineKeyboardButton("sᴏᴜʀᴄᴇ ᴄᴏᴅᴇ", url=f"https://github.com/THEMADMAXPRO/ARYANMUSIC")
+        ],
+        ]
+    
+    reply_markup = InlineKeyboardMarkup(buttons)
+    
+    await msg.reply_photo(
+        photo="https://telegra.ph/file/faa1f3ad7116e33d9f402.jpg",
+        caption=start_txt,
+        reply_markup=reply_markup
     )
-
-
-@Client.on_message(filters.command("repo") & filters.group)
-async def help(client: Client, message: Message):
-
-    await message.reply_photo(
-        photo=f"https://te.legra.ph/file/7ec3b010624cc49644454.jpg",
-        caption=f"""ᴄʟɪᴄᴋ ʙᴇʟᴏᴡ ʙᴜᴛᴛᴏɴ ᴛᴏ ɢᴇᴛ ʀᴇᴘᴏ""",
-        reply_markup=InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton(
-                        "sᴏᴜʀᴄᴇ ᴄᴏᴅᴇ", url=f"https://github.com/THEMADMAXPRO/ARYANMUSIC"
-                    )
-                ]
-            ]
-        ),
-    )
-
-
-@Client.on_message(filters.command("repo") & filters.private)
-async def help(client: Client, message: Message):
-    await message.reply_photo(
-        photo=f"https://te.legra.ph/file/7ec3b010624cc49644454.jpg",
-        caption=f"""ᴄʟɪᴄᴋ ʙᴇʟᴏᴡ ʙᴜᴛᴛᴏɴ ᴛᴏ ɢᴇᴛ ʀᴇᴘᴏ""",
-        reply_markup=InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton(
-                        "sᴏᴜʀᴄᴇ ᴄᴏᴅᴇ", url=f"https://github.com/THEMADMAXPRO/ARYANMUSIC"
-                    )
-                ]
-            ]
-        ),
-    )
-
-
+ 
