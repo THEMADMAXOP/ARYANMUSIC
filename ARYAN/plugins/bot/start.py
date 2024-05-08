@@ -33,7 +33,7 @@ async def start_pm(client, message: Message, _):
         name = message.text.split(None, 1)[1]
         if name[0:4] == "help":
             keyboard = first_page(_)
-            await message.reply_sticker("CAACAgUAAxkBAAICnmX_ish1T3RSY_3ZGkUGn06l5yyOAAIlCwACpm9QVX8Bb2L6G_JtNAQ")
+            await message.reply_sticker("CAACAgUAAxkBAAEGDdBmO1QwB2hrbZbMS7ruPg4BV-rLlwACyQkAAvliwFbzAAFbNMZENhUeBA")
             return await message.reply_photo(
                 photo=config.START_IMG_URL,
                 caption=_["help_1"].format(config.SUPPORT_CHAT),
@@ -86,7 +86,7 @@ async def start_pm(client, message: Message, _):
                 )
     else:
         out = private_panel(_)
-        await message.reply_sticker("CAACAgUAAxkBAAICnmX_ish1T3RSY_3ZGkUGn06l5yyOAAIlCwACpm9QVX8Bb2L6G_JtNAQ")
+        await message.reply_sticker("CAACAgUAAxkBAAEGDdBmO1QwB2hrbZbMS7ruPg4BV-rLlwACyQkAAvliwFbzAAFbNMZENhUeBA")
         await message.reply_photo(
             photo=config.START_IMG_URL,
             caption=_["start_2"].format(message.from_user.mention, app.mention),
